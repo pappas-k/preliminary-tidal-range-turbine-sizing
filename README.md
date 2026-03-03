@@ -34,3 +34,13 @@ Core performance model. Returns the power (MW) and discharge (m³/s) of a turbin
 
 ### `extract_hill_chart(h_array, turbine_params)`
 Sweeps `hill_chart_parametrisation_h` over an array of head values and returns a dataset suitable for plotting the full turbine performance curve.
+
+## Dependencies
+
+- Python 3
+- [NumPy](https://numpy.org/)
+
+## References
+
+- Neil, C., Angeloudis, A., Robins, P.E., Walkington, I., Ward, S.L., Masters, I., Lewis, M.J., Piano, M., Avdis, A., Piggott, M.D., Aggidis, G., Evans, P., Adcock, T.A.A., Zidonis, A., Ahmadian, R., Falconer, R. (2018). Tidal range energy resource and optimization – Past perspectives and future challenges. *Renewable Energy*, 127, 763–778.
+- Angeloudis, A., Kramer, S.C., Avdis, A., & Piggott, M.D. (2018). Optimising tidal range power plant operation. *Applied Energy*, 212, 680–690.
