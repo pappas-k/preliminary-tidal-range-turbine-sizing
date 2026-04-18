@@ -74,8 +74,8 @@ def extract_hill_chart(h_array, turbine_params):
     Example:
         turbine_params = {"f_g": 50, "g_p": 96, "t_d": 7.35, "g": 9.807, "h_cap": 5.5,
                       "dens": 1025, "h_min": 1.0, "eta": [0.93, 0.83]}
-         h_array = np.arange(0.1, 10, 0.1)
-         hill_chart = extract_hill_chart(h_array, turbine_params)
+        h_array = np.arange(0.1, 10, 0.1)
+        hill_chart = extract_hill_chart(h_array, turbine_params)
     """
     p, q = zip(*(hill_chart_parametrisation_h(h_val, turbine_params=turbine_params) for h_val in h_array))
     return np.array([h_array, np.array(p), np.array(q)]).T
@@ -97,9 +97,8 @@ def determine_capacity(mean_area, mean_tidal_range, efficiency=0.4, capacity_fac
         capacity = determine_capacity(area, tidal_range)
     """
     grav, dens = 9.807, 1025
-    DH = mean_tidal_range
 
-    capacity = efficiency * mean_area * 1e6 * ((0.5 * grav * dens * DH * DH / 1e6 * 0.000277778) / (12.42 / 2) / capacity_factor)
+    capacity = efficiency * mean_area * 1e6 * ((0.5 * grav * dens * mean_tidal_range * mean_tidal_range / 1e6 * 0.000277778) / (12.42 / 2) / capacity_factor)
 
     print(f"Capacity predicted = {capacity} MW")
     return capacity
